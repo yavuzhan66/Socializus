@@ -1,20 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React,{ useState} from "react";
+import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+
+
+  export default function App() {
+
+const obj = {
+  name: "spiderman",
+  age: 30
+}
+    const [info, setInfos] = useState(obj)
+
+const handlePress = () => {
+  setInfos({
+    name: "CARTATMAN",
+  age: 777
+  })
 }
 
+    return (
+      <View style={styles.wrapper}>
+      <Text style={ styles.textTwo}>Name: { info.name }</Text>
+      <Text style={ styles.textTwo}>Age: { info.age }</Text>
+
+<Button
+title="Cliquez ici" onPress={handlePress}
+/>
+      </View>
+
+    );
+  }
+
+  
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+ wrapper: { marginTop: 50, fontSize: 30},
+ viewOne:{ backgroundColor:"green", fontWeight: "bold"},
+ textTwo: { backgroundColor: "yellow", fontSize:50},
+ textOne: { fontFamily: "Cochin"}
 });
