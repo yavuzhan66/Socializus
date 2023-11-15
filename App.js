@@ -14,8 +14,8 @@ const obj = {
 
 const handlePress = () => {
   setInfos({
-    name: "CARTATMAN",
-  age: 777
+    name: "catwoman",
+  age: 14
   })
 }
 
