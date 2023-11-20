@@ -1,42 +1,59 @@
-import React,{ useState} from "react";
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Button, FlatList } from "react-native";
 
+export default function App() {
+  const obj = [
+    {},
+    { id: 1, name: "Stan", age: 45 },
+    { id: 2, name: "Francine", age: 40 },
+    { id: 3, name: "Hashley", age: 35 },
+    { id: 4, name: "Sophie", age: 25 },
+    { id: 5, name: "Natasha", age: 15 },
+    { id: 6, name: "Ophélie", age: 28 },
+  ];
+  const [family, setFamily] = useState(obj);
 
+  return (
+    <View style={styles.wrapper}>
+        {
+        family.map(member => {
+          return (
+            <View key={member.id} style={styles.viewList}>
+              <Text style={styles.text}>
+                <Text style={styles.textBold}> Nom: </Text>
+                {member.name}
+              </Text>
 
-
-  export default function App() {
-
-const obj = {
-  name: "spiderman",
-  age: 30
+              <Text style={styles.text}>
+                <Text style={styles.textBold}> Age: </Text>
+                {member.age}
+              </Text>
+            </View>
+          );
+        })}
+      
+    </View>
+  );
 }
-    const [info, setInfos] = useState(obj)
 
-const handlePress = () => {
-  setInfos({
-    name: "catwoman",
-  age: 14
-  })
-}
 
-    return (
-      <View style={styles.wrapper}>
-      <Text style={ styles.textTwo}>Name: { info.name }</Text>
-      <Text style={ styles.textTwo}>Age: { info.age }</Text>
 
-<Button
-title="Cliquez ici" onPress={handlePress}
-/>
-      </View>
-
-    );
-  }
-
-  
 
 const styles = StyleSheet.create({
- wrapper: { marginTop: 50, fontSize: 30},
- viewOne:{ backgroundColor:"green", fontWeight: "bold"},
- textTwo: { backgroundColor: "yellow", fontSize:50},
- textOne: { fontFamily: "Cochin"}
+  wrapper: {
+    padding: 20,
+  },
+    viewList: {
+      marginTop: 30,
+      backgroundColor: "purple",
+      padding: 19
+    },
+    text: {
+      color: "#fff",
+      fontSize: 20
+    },
+    textBold: {
+      fontWeight: "Bold"
+    },
+  
 });
