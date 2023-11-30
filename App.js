@@ -1,8 +1,13 @@
 // Exercice 1
 import React from "react";
-import { View } from "react-native";
+import { View,
+  Text,
+  StyleSheet,
+  useState, } from "react-native";
 
 export default function App() {
+
+  
 
   const obj = [
     {id: "1", name: "Stan", age: 45},
@@ -13,9 +18,18 @@ export default function App() {
     {id: "6", name: "Klaus", age: 30},
   ]
 
+  
   return (
-    <View></View>
+    <View style={styles.container}>
+      <View>
+
+      </View>
+    </View>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#fff",
+  },
+});
