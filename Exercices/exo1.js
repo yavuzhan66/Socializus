@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { View,
   Text,
   StyleSheet,
-  ScrollView,
    } from "react-native";
 
 export default function App() {
@@ -21,13 +20,11 @@ export default function App() {
 
 
   const [family, setFamily] = useState(obj);
-  <ScrollView>
-
+  
   return (
     <View style={styles.container}>
       {
         family.map(member => {
-
 return (
   <View key={member.id} style={styles.list}>
 
@@ -38,11 +35,8 @@ return (
 
       }
     </View>
-    
   );
-  </ScrollView>
 }
-
 
 const styles = StyleSheet.create({
   container: {
